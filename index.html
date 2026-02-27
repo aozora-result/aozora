@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>検査結果報告システム</title>
+  <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+  <main class="page">
+    <section class="panel" aria-label="検査結果報告システム ログイン">
+
+      <div class="logo">
+     <div class="logo-img" aria-label="ロゴ"></div>
+      </div>
+
+      <h1 class="title">検査結果報告システム</h1>
+
+  <form class="form" action="./kekka.html" method="get">
+        <label class="label" for="cardNo">
+          診察券番号<br><span class="small">(半角英数)*</span>
+        </label>
+        <input
+          class="input inputNum"
+          id="cardNo"
+          name="cardNo"
+          placeholder="例)A00001"
+          autocomplete="username"
+        />
+        <label class="label" for="pw">パスワード*</label>
+        <input
+          class="input"
+          id="pw"
+          name="pw"
+          type="password"
+          autocomplete="current-password"
+        />
+
+        <p class="req">*は必須入力です。</p>
+
+        <button class="btn" type="submit">ログイン</button>
+      </form>
+
+      <p class="outlink">
+        <a class="link" href="https://aozoracl.com/" target="_blank" rel="noreferrer">
+          あおぞらクリニックのサイトへ
+        </a>
+      </p>
+
+      <hr class="hr" />
+
+      <div class="ssl">
+  <div class="ssl-badges">
+    <div class="ssl-badge-img" aria-label="RapidSSL"></div>
+    <div class="ssl-badge2-img" aria-label="SSLバッジ2"></div>
+  </div>
+
+  <div class="ssl-text">
+    <p>このサイトはRapidSSLにより認証されています。</p>
+    <p>SSL対応ページからの情報送信は暗号化により保護されています。</p>
+  </div>
+</div>
+
+      <p class="note">
+        あおぞらクリニックでは、検査結果を90日間、Web上でご確認いただけます。<br />
+        診察券番号・パスワードは次回以降の検査でも継続して使用しますので、大切に保管してください。
+      </p>
+
+    </section>
+  </main>
+
+  <script>
+    window.onload = function () {
+      var ua = navigator.userAgent;
+      if (
+        ua.indexOf("iPad") >= 0 ||
+        ua.indexOf("iPhone") >= 0 ||
+        ua.indexOf("iPod") >= 0 ||
+        ua.indexOf("Android") >= 0 ||
+        ua.indexOf("Windows Phone") >= 0
+      ) {
+        var els = document.getElementsByClassName("inputNum");
+        for (var i = 0; i < els.length; i++) {
+          els.item(i).setAttribute("type", "tel");
+        }
+      }
+    };
+  </script>
+</body>
+</html>
